@@ -10,12 +10,10 @@ export default function SubmitProject() {
   const [desc, setDesc] = useState("");
   const [tags, setTags] = useState("");
   const [team, setTeam] = useState("");
-  const [images, setImages] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
-    setImages(files);
 
     const previewUrls = files.map((file) => URL.createObjectURL(file));
     setPreviews(previewUrls);
@@ -38,7 +36,6 @@ export default function SubmitProject() {
     setDesc("");
     setTags("");
     setTeam("");
-    setImages([]);
     setPreviews([]);
   };
 
